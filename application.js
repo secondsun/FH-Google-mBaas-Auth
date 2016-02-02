@@ -9,7 +9,6 @@ var app = express();
 app.use(cors());
 
 // Note: the order which we add middleware to Express here is important!
-app.use('/sys', mbaasExpress.sys(securableEndpoints));
 app.use('/mbaas', mbaasExpress.mbaas);
 
 // allow serving of static files from the public directory
