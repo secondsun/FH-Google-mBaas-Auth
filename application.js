@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/public'));
 
 // Note: important that this is added just before your own Routes
 app.use(mbaasExpress.fhmiddleware());
-
+app.use('/sys', mbaasExpress.sys(securableEndpoints));
 app.use('/hello', require('./lib/hello.js')());
 app.use(bodyParser());
 
