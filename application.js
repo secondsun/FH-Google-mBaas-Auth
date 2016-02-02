@@ -2,6 +2,8 @@ var mbaasApi = require('fh-mbaas-api');
 var express = require('express');
 var mbaasExpress = mbaasApi.mbaasExpress();
 var cors = require('cors');
+var bodyParser = require('body-parser');
+
 
 var app = express();
 
@@ -19,6 +21,7 @@ app.use(mbaasExpress.fhmiddleware());
 
 app.use('/hello', require('./lib/hello.js')());
 app.use('/auth', require('./lib/auth.js')());
+app.use(bodyParser());
 
 // Important that this is last!
 app.use(mbaasExpress.errorHandler());
