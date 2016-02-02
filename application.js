@@ -3,10 +3,6 @@ var express = require('express');
 var mbaasExpress = mbaasApi.mbaasExpress();
 var cors = require('cors');
 
-// list the endpoints which you want to make securable here
-var securableEndpoints;
-securableEndpoints = ['/hello'];
-
 var app = express();
 
 // Enable CORS for all requests
