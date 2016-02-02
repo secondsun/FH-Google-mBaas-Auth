@@ -11,6 +11,7 @@ var app = express();
 app.use(cors());
 
 // Note: the order which we add middleware to Express here is important!
+app.use('/sys', mbaasExpress.sys([]));
 app.use('/mbaas', mbaasExpress.mbaas);
 
 // allow serving of static files from the public directory
@@ -18,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 
 // Note: important that this is added just before your own Routes
 app.use(mbaasExpress.fhmiddleware());
-app.use('/sys', mbaasExpress.sys([]));
+
 app.use('/hello', require('./lib/hello.js')());
 app.use(bodyParser());
 
