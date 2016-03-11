@@ -29,7 +29,7 @@ app.get('/list/:session', function(req,res) {
     if (err) {
      res.end('Boo! ' + err);
     } else {
-      
+      var accountId = data.list[0]
     }
   });
   });
