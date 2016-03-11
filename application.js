@@ -23,7 +23,8 @@ app.use(mbaasExpress.fhmiddleware());
 app.get('/list/:googleId', function(req,res) {
   mbaasApi.db({
           "act": "list",
-          "type": 'account'
+          "type": 'account',
+          "eq":{"sub":googleId}
   }, function(err, noterr) {
     if (err) {
      res.end('Boo! ' + err);
