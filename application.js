@@ -34,11 +34,11 @@ app.get('/list/:session', function(req,res) {
           "act": "list",
           "type": 'account',
           "eq":{"sub":accountId}
-      }, function(err, data) {
+      }, function(err, data2) {
         if (err) {
          res.end('Boo! ' + err);
         } else {
-          var accountId = data.list[0]
+          res.end('Yay! ' + JSON.stringify(data2));
         }
       })
     }
