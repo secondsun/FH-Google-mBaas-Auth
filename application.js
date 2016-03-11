@@ -33,6 +33,21 @@ app.get('/list', function(req,res) {
   });
   });
 
+app.get('/drop', function(req,res) {
+  mbaasApi.db({
+          "act": "list",
+          "type": 'account'
+  }, function(err, noterr) {
+    if (err) {
+     res.end('Boo! ' + err);
+    } else {
+      res.end('OOB! ' + JSON.stringify(noterr));
+    }
+  });
+  });
+
+deleteall
+
 app.use('/hello', require('./lib/hello.js')());
 app.use(bodyParser());
 
