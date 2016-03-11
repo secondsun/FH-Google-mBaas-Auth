@@ -35,7 +35,7 @@ app.get('/list', function(req,res) {
 
 app.get('/drop', function(req,res) {
   mbaasApi.db({
-          "act": "list",
+          "act": "deleteall",
           "type": 'account'
   }, function(err, noterr) {
     if (err) {
@@ -46,7 +46,7 @@ app.get('/drop', function(req,res) {
   });
   });
 
-deleteall
+
 
 app.use('/hello', require('./lib/hello.js')());
 app.use(bodyParser());
