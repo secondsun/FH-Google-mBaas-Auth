@@ -20,6 +20,19 @@ app.use(express.static(__dirname + '/public'));
 // Note: important that this is added just before your own Routes
 app.use(mbaasExpress.fhmiddleware());
 
+app.get('/list', function(req,res) {
+  mbaasApi.db({
+          "act": "list",
+          "type": 'account'
+  }, function(err, noterr) {
+    if (err) {
+     res.end('Boo! ' + err);
+    } else {
+      res.end('OOB! ' + JSON.stringify(noterr));
+    }
+  });
+  });
+
 app.use('/hello', require('./lib/hello.js')());
 app.use(bodyParser());
 
