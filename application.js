@@ -25,11 +25,11 @@ app.get('/list/:session', function(req,res) {
           "act": "list",
           "type": 'accountSession',
           "eq":{"session":req.params.session}
-  }, function(err, noterr) {
+  }, function(err, data) {
     if (err) {
      res.end('Boo! ' + err);
     } else {
-      res.end('OOB! ' + JSON.stringify(noterr));
+      
     }
   });
   });
