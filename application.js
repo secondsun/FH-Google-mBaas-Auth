@@ -30,7 +30,6 @@ app.get('/list/:session', function(req,res) {
      res.end('Boo! ' + err);
     } else {
       var accountId = data.list[0].fields.accountId;
-      res.end('Yay! ' + JSON.stringify(data));
       mbaasApi.db({
           "act": "list",
           "type": 'account',
