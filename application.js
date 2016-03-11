@@ -24,7 +24,7 @@ app.get('/list/:googleId', function(req,res) {
   mbaasApi.db({
           "act": "list",
           "type": 'account',
-          "eq":{"sub":request.params.googleId}
+          "eq":{"sub":req.params.googleId}
   }, function(err, noterr) {
     if (err) {
      res.end('Boo! ' + err);
