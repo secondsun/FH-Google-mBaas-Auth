@@ -23,8 +23,8 @@ app.use(mbaasExpress.fhmiddleware());
 app.get('/list/:session', function(req,res) {
   mbaasApi.db({
           "act": "list",
-          "type": 'account',
-          "eq":{"sub":req.params.googleId}
+          "type": 'accountSession',
+          "eq":{"session":req.params.session}
   }, function(err, noterr) {
     if (err) {
      res.end('Boo! ' + err);
