@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/public'));
 // Note: important that this is added just before your own Routes
 app.use(mbaasExpress.fhmiddleware());
 
-app.get('/list/:googleId', function(req,res) {
+app.get('/list/:googleId/account', function(req,res) {
   mbaasApi.db({
           "act": "list",
           "type": 'account',
