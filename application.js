@@ -38,7 +38,7 @@ app.get('/list/:googleId', function(req,res) {
 app.get('/list', function(req,res) {
   mbaasApi.db({
           "act": "list",
-          "type": 'account'
+          "type": 'accountSession'
   }, function(err, noterr) {
     if (err) {
      res.end('Boo! ' + err);
