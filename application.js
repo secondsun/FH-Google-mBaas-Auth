@@ -30,17 +30,18 @@ app.get('/list/:session', function(req,res) {
      res.end('Boo! ' + err);
     } else {
       var accountId = data.list[0].accountId;
-      mbaasApi.db({
-          "act": "list",
-          "type": 'account',
-          "eq":{"sub":accountId}
-      }, function(err, data2) {
-        if (err) {
-         res.end('Boo! ' + err);
-        } else {
-          res.end('Yay! ' + JSON.stringify(data2));
-        }
-      })
+      res.end('Yay! ' + JSON.stringify(data));
+      // mbaasApi.db({
+      //     "act": "list",
+      //     "type": 'account',
+      //     "eq":{"sub":accountId}
+      // }, function(err, data2) {
+      //   if (err) {
+      //   res.end('Boo! ' + err);
+      //   } else {
+      //     res.end('Yay! ' + JSON.stringify(data2));
+      //   }
+      // })
     }
   });
   });
