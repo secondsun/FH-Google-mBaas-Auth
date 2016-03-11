@@ -29,7 +29,18 @@ app.get('/list/:session', function(req,res) {
     if (err) {
      res.end('Boo! ' + err);
     } else {
-      var accountId = data.list[0]
+      var accountId = data.list[0].accountId;
+      mbaasApi.db({
+          "act": "list",
+          "type": 'account',
+          "eq":{"sub":accountId}
+      }, function(err, data) {
+        if (err) {
+         res.end('Boo! ' + err);
+        } else {
+          var accountId = data.list[0]
+        }
+      })
     }
   });
   });
