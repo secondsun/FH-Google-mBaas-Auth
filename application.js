@@ -32,6 +32,9 @@ app.get('/list/:session', function(req,res) {
     if (err) {
      res.end(err);
     } else {
+      if (!data.list[0]) {
+        return res.end('Account not found');
+      }
       console.log(JSON.stringify(data)); 
       var accountId = data.list[0].fields.accountId;
       
