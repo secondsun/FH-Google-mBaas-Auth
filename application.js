@@ -45,20 +45,6 @@ app.get('/list/:session', function(req,res) {
   });
   });
 
-
-app.get('/list', function(req,res) {
-  mbaasApi.db({
-          "act": "list",
-          "type": 'accountSession'
-  }, function(err, noterr) {
-    if (err) {
-     res.end('Boo! ' + err);
-    } else {
-      res.end('OOB! ' + JSON.stringify(noterr));
-    }
-  });
-  });
-
 app.get('/drop', function(req,res) {
   mbaasApi.db({
           "act": "deleteall",
