@@ -22,6 +22,8 @@ app.use(mbaasExpress.fhmiddleware());
 
 app.get('/list/:session', function(req,res) {
   
+  console.log('list ' + req.params.session);
+  
   mbaasApi.db({
           "act": "list",
           "type": 'accountSession',
