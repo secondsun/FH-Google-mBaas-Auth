@@ -47,7 +47,7 @@ app.get('/list/:session', function(req,res) {
         if (err) {
           res.end(err);
         } else {
-          res.end(JSON.stringify(data2));
+          res.end(JSON.stringify(data2.list[0].fields));
         }
       })
     }
