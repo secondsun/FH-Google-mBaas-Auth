@@ -21,11 +21,11 @@ app.use(express.static(__dirname + '/public'));
 app.use(mbaasExpress.fhmiddleware());
 
 app.get('/list/:session', function(req,res) {
-  console.log(JSON.stringify(req.params)); 
+  
   mbaasApi.db({
           "act": "list",
           "type": 'accountSession',
-          "eq":{"session":req.params.session}
+          "eq":{"session":req.params.session.split('_')[0]}
   }, function(err, data) {
     if (err) {
      res.end(err);
