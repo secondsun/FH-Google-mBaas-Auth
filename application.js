@@ -27,7 +27,7 @@ app.get('/list/:session', function(req,res) {
           "eq":{"session":req.params.session}
   }, function(err, data) {
     if (err) {
-     res.end('Boo! ' + err);
+     res.end(err);
     } else {
       var accountId = data.list[0].fields.accountId;
       mbaasApi.db({
