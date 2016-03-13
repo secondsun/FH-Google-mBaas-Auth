@@ -25,7 +25,7 @@ app.get('/list/:session', function(req,res) {
   mbaasApi.db({
           "act": "list",
           "type": 'accountSession',
-          "eq":{"session":req.params.session.split('_')[0]}
+          "eq":{"session":req.params.session}
   }, function(err, data) {
     if (err) {
      res.end(err);
