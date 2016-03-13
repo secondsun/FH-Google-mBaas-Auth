@@ -29,7 +29,9 @@ app.get('/list/:session', function(req,res) {
     if (err) {
      res.end(err);
     } else {
+      console.log(JSON.stringify(data)); 
       var accountId = data.list[0].fields.accountId;
+      
       mbaasApi.db({
           "act": "list",
           "type": 'account',
