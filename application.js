@@ -33,6 +33,7 @@ app.get('/list/:session', function(req,res) {
      res.end(err);
     } else {
       if (!data.list[0]) {
+        res.status(400);
         return res.end('Account not found');
       }
       console.log(JSON.stringify(data)); 
